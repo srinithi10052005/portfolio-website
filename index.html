@@ -40,7 +40,6 @@
   section { padding: 6rem 6vw; }
   .lbl { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .75rem; font-weight: 500; }
   .sec-title { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem,4vw,3rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 3rem; line-height: 1.1; }
-  .divider { width: 100%; height: 1px; background: var(--border); margin: 0 0 6rem; }
 
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1.5rem; }
   .pcard { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; transition: all .3s; position: relative; overflow: hidden; }
@@ -58,6 +57,7 @@
   .overlay.open { display: flex; }
   .modal { background: #0e1520; border: 1px solid rgba(0,212,161,.25); border-radius: 24px; padding: 2.5rem; max-width: 560px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; }
   .m-close { position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--muted); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .m-btn-p { background: var(--accent); color: #000; padding: .8rem 1.5rem; border-radius: 10px; font-weight: 600; border: none; cursor: pointer; }
   
   .demo-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.95); z-index: 1100; flex-direction: column; }
   .demo-overlay.open { display: flex; }
@@ -75,8 +75,8 @@
 <nav>
   <a href="#" class="nav-logo">Srinithi</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -89,7 +89,7 @@
     <p class="hero-desc">I craft modern web experiences using React, PHP/MySQL, and Cloud Computing — turning complex logic into clean applications.</p>
     <div class="cta">
       <a href="#projects" class="btn-p">View Projects</a>
-      <a href="#contact" class="btn-s">Get in Touch</a>
+      <a href="mailto:your-email@example.com" class="btn-s">Get in Touch</a>
     </div>
   </div>
 </section>
@@ -100,22 +100,24 @@
     <div class="pcard">
       <div class="p-icon">🤖</div>
       <div class="p-name">SDNB-ASKNOVA Assistant</div>
-      <p class="p-desc">My custom bilingual campus helpdesk. Handles college queries in English and Tamil with real-time logic.</p>
+      <p class="p-desc">Institutional helpdesk with bilingual (English/Tamil) support. Features a custom PHP/MySQL backend for student queries.</p>
       <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
       <button class="view-btn" onclick="openModal('chatbot')">View Project →</button>
     </div>
+
     <div class="pcard">
-      <div class="p-icon">🎓</div>
-      <div class="p-name">PLACIFY Portal</div>
-      <p class="p-desc">A professional training web portal for placement preparation, aptitude modules, and interview guides.</p>
-      <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
-      <button class="view-btn" onclick="openModal('placify')">View Project →</button>
+      <div class="p-icon">☁️</div>
+      <div class="p-name">AWS Cloud Infrastructure</div>
+      <p class="p-desc">A cloud resource dashboard designed to track instance health, S3 bucket storage, and real-time security group status.</p>
+      <div class="tags"><span class="tag">AWS</span><span class="tag">Cloud Computing</span><span class="tag">Python</span></div>
+      <button class="view-btn" onclick="openModal('cloud')">View Project →</button>
     </div>
+
     <div class="pcard">
       <div class="p-icon">👥</div>
       <div class="p-name">Employee Management</div>
-      <p class="p-desc">A data-driven dashboard for tracking employee records, attendance, and departmental roles.</p>
-      <div class="tags"><span class="tag">React</span><span class="tag">Dashboard UI</span></div>
+      <p class="p-desc">A professional dashboard built for organizational data management, role tracking, and attendance reporting.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">Dashboard UI</span><span class="tag">REST API</span></div>
       <button class="view-btn" onclick="openModal('ems')">View Project →</button>
     </div>
   </div>
@@ -140,10 +142,10 @@
   <div class="modal" id="modal">
     <button class="m-close" onclick="closeModal()">✕</button>
     <div class="m-icon" id="m-icon" style="font-size:2rem; margin-bottom:1rem;"></div>
-    <h2 class="m-title" id="m-title" style="margin-bottom:1rem;"></h2>
+    <h2 class="m-title" id="m-title" style="margin-bottom:1rem; font-family:'Syne';"></h2>
     <p class="m-desc" id="m-desc" style="color:var(--muted); margin-bottom:2rem;"></p>
     <div class="m-actions">
-      <button class="m-btn-p" onclick="openDemo()">↗ Live Demo</button>
+      <button class="m-btn-p" onclick="openDemo()">↗ Open Live Demo</button>
     </div>
   </div>
 </div>
@@ -151,43 +153,95 @@
 <div class="demo-overlay" id="demo-overlay">
   <div class="demo-bar">
     <span id="demo-bar-title" style="color:var(--accent); font-weight:bold;"></span>
-    <button onclick="closeDemo()" style="background:var(--accent); border:none; padding:5px 15px; border-radius:5px; cursor:pointer;">Close</button>
+    <button onclick="closeDemo()" style="background:var(--accent); border:none; padding:5px 15px; border-radius:5px; cursor:pointer; font-weight:bold;">Close</button>
   </div>
   <div class="demo-frame-wrap"><iframe class="demo-frame" id="demo-frame"></iframe></div>
 </div>
 
 <script>
 const projectDetails = {
-  chatbot: { title: "SDNB-ASKNOVA Assistant", icon: "🤖", desc: "My primary custom-built chatbot. It serves the SDNB Vaishnav College community with bilingual support." },
-  placify: { title: "PLACIFY Placement Portal", icon: "🎓", desc: "A full web page application designed to streamline campus placement preparation." },
-  ems: { title: "Employee Management System", icon: "👥", desc: "A professional dashboard mock-up for managing organizational data." }
+  chatbot: { title: "SDNB-ASKNOVA Assistant", icon: "🤖", desc: "A custom bilingual campus helpdesk using institution branding. It features a responsive chat UI with real-time logic for student inquiries in English and Tamil." },
+  cloud: { title: "AWS Infrastructure Monitor", icon: "☁️", desc: "A dashboard application designed to visualize cloud resources, monitor costs, and manage security across multiple AWS regions." },
+  ems: { title: "Employee Management System", icon: "👥", desc: "A data-driven management dashboard for tracking employee records, departmental roles, and organizational analytics." }
 };
 
 const demos = {
-  chatbot: `<html><body style="font-family:sans-serif; background:#f0f2f5; display:flex; flex-direction:column; height:95vh; margin:0;">
-    <div style="background:#00d4a1; color:white; padding:15px; text-align:center;">SDNB-ASKNOVA</div>
-    <div id="c" style="flex:1; padding:20px; overflow-y:auto;">
-      <div style="background:white; padding:10px; border-radius:10px; margin-bottom:10px; width:fit-content;">Welcome! How can I help you today?</div>
+  chatbot: `<html><body style="font-family:'Segoe UI', sans-serif; background:#f4f4f4; margin:0; display:flex; flex-direction:column; height:100vh;">
+    <div style="background:#800000; color:white; padding:12px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:3px solid #f9c215;">
+        <div style="width:35px; height:35px; background:rgba(255,255,255,0.2); border-radius:50%; font-size:8px; display:flex; align-items:center; justify-content:center; text-align:center;">SDNB LOGO</div>
+        <div style="font-weight:bold; font-size:14px;">SDNB-ASKNOVA</div>
+        <div style="width:35px; height:35px; background:rgba(255,255,255,0.2); border-radius:50%; font-size:8px; display:flex; align-items:center; justify-content:center; text-align:center;">50 YRS</div>
     </div>
-    <div style="padding:15px; background:white; display:flex;"><input id="i" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:5px;" placeholder="Ask something..." onkeypress="if(event.key=='Enter')send()"></div>
-    <script>function send(){ const i=document.getElementById('i'); const c=document.getElementById('c'); if(!i.value)return; c.innerHTML+='<div style="background:#00d4a1; color:white; padding:10px; border-radius:10px; margin-bottom:10px; align-self:flex-end; margin-left:auto; width:fit-content;">'+i.value+'</div>'; setTimeout(()=>{ c.innerHTML+='<div style="background:white; border:1px solid #ddd; padding:10px; border-radius:10px; margin-bottom:10px; width:fit-content;">Processing query via SDNB Database...</div>'; c.scrollTop=c.scrollHeight; },500); i.value=''; }<\/script>
+    <div id="c" style="flex:1; padding:20px; overflow-y:auto; background-image: radial-gradient(#ccc 0.5px, transparent 0.5px); background-size: 15px 15px;">
+      <div style="background:white; padding:12px 18px; border-radius:12px; margin-bottom:10px; max-width:80%; box-shadow:0 2px 5px rgba(0,0,0,0.05);">
+        👋 Welcome to SDNB ASKNOVA.<br>I am your service assistant, here to assist you with your inquiries 😊.
+      </div>
+    </div>
+    <div style="padding:15px; background:white; border-top:1px solid #eee;">
+      <div style="display:flex; gap:10px; justify-content:center; margin-bottom:12px;">
+        <button style="border:1px solid #800000; color:#800000; background:none; padding:4px 15px; border-radius:20px; font-weight:bold; font-size:12px;">English</button>
+        <button style="border:1px solid #800000; color:#800000; background:none; padding:4px 15px; border-radius:20px; font-weight:bold; font-size:12px;">Tamil</button>
+      </div>
+      <div style="display:flex; border:1px solid #333; border-radius:25px; padding:5px 15px; align-items:center;">
+        <input style="flex:1; border:none; outline:none; padding:8px;" placeholder="Ask your question...">
+        <span style="color:#800000; font-size:20px; cursor:pointer;">➤</span>
+      </div>
+    </div>
   </body></html>`,
   
-  placify: `<html><body style="font-family:sans-serif; margin:0; background:#f8fafc;">
-    <nav style="background:#1e293b; color:white; padding:20px; display:flex; justify-content:space-between;"><strong>PLACIFY PORTAL</strong> <span>Dashboard</span></nav>
-    <div style="padding:40px; text-align:center; background:#3b82f6; color:white;"><h1>Your Career Starts Here</h1><p>Training guides for Zoho, TCS, and more.</p></div>
+  cloud: `<html><body style="font-family:sans-serif; margin:0; background:#0f172a; color:#f8fafc;">
+    <div style="background:#1e293b; padding:15px; display:flex; gap:20px; border-bottom:1px solid #334155;"><strong>AWS Console</strong> <span style="color:#94a3b8;">Instances</span> <span style="color:#94a3b8;">S3 Storage</span></div>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:20px;">
-      <div style="background:white; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><h3>Aptitude Practice</h3><button style="background:#3b82f6; color:white; border:none; padding:10px; border-radius:5px;">Start Quiz</button></div>
-      <div style="background:white; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><h3>Technical Prep</h3><button style="background:#3b82f6; color:white; border:none; padding:10px; border-radius:5px;">View Guides</button></div>
+      <div style="background:#1e293b; border:1px solid #334155; padding:20px; border-radius:12px;">
+        <h4 style="margin:0; color:#94a3b8;">Active Instances</h4>
+        <div style="font-size:32px; font-weight:bold; color:#3b82f6; margin:10px 0;">12</div>
+        <div style="font-size:12px; color:#22c55e;">● All Systems Healthy</div>
+      </div>
+      <div style="background:#1e293b; border:1px solid #334155; padding:20px; border-radius:12px;">
+        <h4 style="margin:0; color:#94a3b8;">Monthly Spend</h4>
+        <div style="font-size:32px; font-weight:bold; color:#00d4a1; margin:10px 0;">$142.50</div>
+        <div style="font-size:12px; color:#94a3b8;">Budget: $200.00</div>
+      </div>
+    </div>
+    <div style="padding:0 20px;">
+      <div style="background:#1e293b; border:1px solid #334155; padding:15px; border-radius:12px;">
+        <h4 style="margin-top:0;">Recent Security Logs</h4>
+        <div style="font-size:13px; font-family:monospace; color:#64748b;">
+          [10:14:02] Security Group "Web-Tier" Updated<br>
+          [09:45:33] Snapshot created for vol-0a1b2c...<br>
+          [08:21:10] IAM User "admin" logged in from Chennai
+        </div>
+      </div>
     </div>
   </body></html>`,
 
   ems: `<html><body style="font-family:sans-serif; margin:0; display:flex;">
-    <div style="width:200px; background:#2d3748; color:white; height:100vh; padding:20px;">EMS Admin<br><br>Employees<br>Reports</div>
-    <div style="flex:1; padding:20px; background:#f7fafc;"><h2>Active Staff</h2><table style="width:100%; border-collapse:collapse; background:white;">
-    <tr style="background:#edf2f7;"><th style="padding:10px; text-align:left;">Name</th><th style="padding:10px; text-align:left;">Role</th></tr>
-    <tr><td style="padding:10px; border-bottom:1px solid #eee;">Srinithi</td><td style="padding:10px; border-bottom:1px solid #eee;">Lead Dev</td></tr>
-    </table></div>
+    <div style="width:180px; background:#1a202c; color:white; height:100vh; padding:20px; font-size:14px;">
+      <h3 style="color:#00d4a1;">EMS ADMIN</h3><br>
+      <div style="background:rgba(255,255,255,0.1); padding:8px; border-radius:5px;">Staff List</div><br>
+      <div>Departments</div><br>
+      <div>Analytics</div>
+    </div>
+    <div style="flex:1; padding:30px; background:#f7fafc;">
+      <h2 style="margin-top:0;">Active Staff</h2>
+      <table style="width:100%; border-collapse:collapse; background:white; border-radius:10px; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+        <tr style="background:#f1f5f9; text-align:left;">
+          <th style="padding:15px; font-size:13px;">NAME</th>
+          <th style="padding:15px; font-size:13px;">ROLE</th>
+          <th style="padding:15px; font-size:13px;">STATUS</th>
+        </tr>
+        <tr>
+          <td style="padding:15px; border-bottom:1px solid #eee;">Srinithi</td>
+          <td style="padding:15px; border-bottom:1px solid #eee;">Full Stack Dev</td>
+          <td style="padding:15px; border-bottom:1px solid #eee;"><span style="background:#c6f6d5; color:#22543d; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold;">ACTIVE</span></td>
+        </tr>
+        <tr>
+          <td style="padding:15px; border-bottom:1px solid #eee;">Rahul K.</td>
+          <td style="padding:15px; border-bottom:1px solid #eee;">UI Designer</td>
+          <td style="padding:15px; border-bottom:1px solid #eee;"><span style="background:#c6f6d5; color:#22543d; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:bold;">ACTIVE</span></td>
+        </tr>
+      </table>
+    </div>
   </body></html>`
 };
 
@@ -206,7 +260,7 @@ function openDemo() {
   f.contentWindow.document.open();
   f.contentWindow.document.write(demos[currentKey]);
   f.contentWindow.document.close();
-  document.getElementById('demo-bar-title').innerText = projectDetails[currentKey].title;
+  document.getElementById('demo-bar-title').innerText = "Live Demo: " + projectDetails[currentKey].title;
   document.getElementById('demo-overlay').classList.add('open');
 }
 function closeDemo() { document.getElementById('demo-overlay').classList.remove('open'); }
