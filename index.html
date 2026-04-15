@@ -36,8 +36,6 @@
   .btn-p:hover { background: #00f0b8; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,161,.3); }
   .btn-s { background: transparent; color: var(--text); padding: .85rem 2rem; border-radius: 100px; border: 1px solid rgba(255,255,255,.15); font-weight: 500; font-size: .95rem; text-decoration: none; transition: all .2s; }
   .btn-s:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-  .scroll-line { position: absolute; bottom: 2.5rem; left: 6vw; display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: .8rem; letter-spacing: 1px; }
-  .scroll-line::before { content: ''; width: 40px; height: 1px; background: var(--muted); }
 
   section { padding: 6rem 6vw; }
   .lbl { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .75rem; font-weight: 500; }
@@ -46,76 +44,30 @@
 
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1.5rem; }
   .pcard { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; transition: all .3s; position: relative; overflow: hidden; }
-  .pcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,var(--accent),var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
-  .pcard:hover::before { transform: scaleX(1); }
   .pcard:hover { background: rgba(255,255,255,.05); border-color: rgba(0,212,161,.3); transform: translateY(-4px); }
   .p-icon { width: 50px; height: 50px; border-radius: 12px; background: rgba(0,212,161,.1); border: 1px solid rgba(0,212,161,.2); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1.5rem; }
   .p-name { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 700; margin-bottom: .75rem; }
-  .p-desc { color: var(--muted); font-size: .95rem; margin-bottom: 1.5rem; font-weight: 300; line-height: 1.7; }
+  .p-desc { color: var(--muted); font-size: .95rem; margin-bottom: 1.5rem; font-weight: 300; }
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
   .tag { background: rgba(0,212,161,.08); border: 1px solid rgba(0,212,161,.15); color: var(--accent); padding: 4px 12px; border-radius: 100px; font-size: .78rem; font-weight: 500; }
-  .view-btn { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: .9rem; font-weight: 500; cursor: pointer; background: none; border: none; font-family: inherit; transition: gap .2s; padding: 0; }
+  .view-btn { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: .9rem; font-weight: 500; cursor: pointer; background: none; border: none; font-family: inherit; transition: gap .2s; }
   .view-btn:hover { gap: 10px; }
 
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 1rem; }
-  .scard { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 1rem; text-align: center; transition: all .25s; }
-  .scard:hover { background: rgba(0,212,161,.05); border-color: rgba(0,212,161,.3); transform: translateY(-3px); }
-  .s-icon { font-size: 2rem; margin-bottom: .75rem; display: block; }
-  .s-name { font-size: .9rem; font-weight: 500; }
-
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .about-text { font-size: 1.05rem; color: var(--muted); line-height: 1.9; font-weight: 300; }
-  .about-text strong { color: var(--text); font-weight: 500; }
-  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
-  .stat-n { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--accent); letter-spacing: -1px; line-height: 1; margin-bottom: .4rem; }
-  .stat-l { font-size: .85rem; color: var(--muted); }
-
-  .contact-inner { max-width: 560px; }
-  .contact-desc { color: var(--muted); font-size: 1.05rem; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.8; }
-  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-  .citem { display: flex; align-items: center; gap: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.25rem; text-decoration: none; transition: all .2s; }
-  .citem:hover { border-color: rgba(0,212,161,.35); background: rgba(0,212,161,.04); transform: translateX(6px); }
-  .c-ico { width: 38px; height: 38px; background: rgba(0,212,161,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
-  .c-lbl { font-size: .78rem; color: var(--muted); letter-spacing: .5px; }
-  .c-val { font-size: .95rem; color: var(--text); font-weight: 500; }
-
-  footer { border-top: 1px solid var(--border); padding: 2rem 6vw; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: .85rem; }
-  .f-logo { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--accent); }
-
-  /* PROJECT DETAIL MODAL */
+  /* OVERLAYS */
   .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 999; align-items: center; justify-content: center; padding: 2rem; backdrop-filter: blur(8px); }
   .overlay.open { display: flex; }
-  .modal { background: #0e1520; border: 1px solid rgba(0,212,161,.25); border-radius: 24px; padding: 2.5rem; max-width: 560px; width: 100%; position: relative; animation: mIn .3s ease; max-height: 90vh; overflow-y: auto; }
-  @keyframes mIn { from{opacity:0;transform:translateY(20px) scale(.97)} to{opacity:1;transform:none} }
-  .m-close { position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--muted); width: 34px; height: 34px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; }
-  .m-close:hover { background: rgba(255,255,255,.12); color: var(--text); }
-  .m-icon { width: 56px; height: 56px; border-radius: 14px; background: rgba(0,212,161,.1); border: 1px solid rgba(0,212,161,.2); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1.25rem; }
-  .m-title { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: .75rem; letter-spacing: -.5px; }
-  .m-desc { color: var(--muted); font-size: .97rem; line-height: 1.8; margin-bottom: 1.5rem; font-weight: 300; }
-  .m-slbl { font-size: .73rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
-  .m-features { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px; }
-  .m-features li { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: .93rem; font-weight: 300; }
-  .m-features li::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
-  .m-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
-  .m-actions { display: flex; gap: 1rem; }
-  .m-btn-p { background: var(--accent); color: #000; padding: .7rem 1.5rem; border-radius: 100px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: all .2s; cursor: pointer; border: none; font-family: inherit; }
-  .m-btn-p:hover { background: #00f0b8; transform: translateY(-1px); }
-  .m-btn-s { background: transparent; color: var(--text); padding: .7rem 1.5rem; border-radius: 100px; border: 1px solid rgba(255,255,255,.15); font-weight: 500; font-size: .9rem; text-decoration: none; transition: all .2s; }
-  .m-btn-s:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* LIVE DEMO OVERLAY */
-  .demo-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 1100; flex-direction: column; backdrop-filter: blur(10px); }
+  .modal { background: #0e1520; border: 1px solid rgba(0,212,161,.25); border-radius: 24px; padding: 2.5rem; max-width: 560px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; }
+  .m-close { position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--muted); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  
+  .demo-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.95); z-index: 1100; flex-direction: column; }
   .demo-overlay.open { display: flex; }
-  .demo-bar { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1.5rem; background: #0a0f18; border-bottom: 1px solid rgba(0,212,161,.2); flex-shrink: 0; }
-  .demo-bar-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--accent); }
-  .demo-bar-right { display: flex; align-items: center; gap: .75rem; }
-  .demo-close-btn { background: rgba(255,255,255,.06); border: 1px solid var(--border); color: var(--muted); padding: .4rem 1rem; border-radius: 100px; font-size: .85rem; cursor: pointer; font-family: inherit; transition: all .2s; }
-  .demo-close-btn:hover { background: rgba(255,255,255,.12); color: var(--text); }
-  .demo-frame-wrap { flex: 1; overflow: hidden; }
+  .demo-bar { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1.5rem; background: #0a0f18; border-bottom: 1px solid var(--accent); }
+  .demo-frame-wrap { flex: 1; }
   .demo-frame { width: 100%; height: 100%; border: none; background: #fff; }
 
-  @media(max-width:768px){ .about-grid{grid-template-columns:1fr;gap:2rem} .nav-links{display:none} h1{font-size:3rem} }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap: 1rem; }
+  .scard { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 1rem; text-align: center; }
+  footer { border-top: 1px solid var(--border); padding: 2rem 6vw; display: flex; justify-content: space-between; color: var(--muted); font-size: .85rem; }
 </style>
 </head>
 <body>
@@ -125,18 +77,16 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <section class="hero" id="home">
   <div class="circle c1"></div>
-  <div class="circle c2"></div>
   <div class="hero-content">
     <div class="badge"><span class="dot"></span>Available for opportunities</div>
     <h1>Hi, I'm<br/><span class="acc">Srinithi</span> <span class="muted">—</span><br/><span class="muted">Full Stack</span><br/>Developer</h1>
-    <p class="hero-desc">I craft modern web experiences using React, PHP/MySQL, and Node.js — turning ideas into clean, functional applications.</p>
+    <p class="hero-desc">I craft modern web experiences using React, PHP/MySQL, and Cloud Computing — turning complex logic into clean applications.</p>
     <div class="cta">
       <a href="#projects" class="btn-p">View Projects</a>
       <a href="#contact" class="btn-s">Get in Touch</a>
@@ -144,345 +94,122 @@
   </div>
 </section>
 
-<section id="about">
-  <p class="lbl">About Me</p><h2 class="sec-title">Passionate about building<br/>things that matter.</h2>
-  <div class="about-grid">
-    <div>
-      <p class="about-text">I'm a <strong>Full Stack Developer</strong> with a love for building clean, user-centric web applications. I enjoy working across the stack — from crafting responsive UIs to designing robust backends in XAMPP.<br/><br/>Whether it's a bilingual chatbot that simplifies campus queries or a placement preparation platform, I focus on writing <strong>meaningful, efficient code</strong> that solves real problems. I specialize in building accessible applications in both English and Tamil.</p>
-    </div>
-    <div class="stats">
-      <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Projects Built</div></div>
-      <div class="stat"><div class="stat-n">8</div><div class="stat-l">Core Technologies</div></div>
-      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Passion Driven</div></div>
-      <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Curiosity</div></div>
-    </div>
-  </div>
-</section>
-
-<div class="divider" style="margin-left:6vw;margin-right:6vw;"></div>
-
 <section id="projects">
   <p class="lbl">Work</p><h2 class="sec-title">Projects I've built.</h2>
   <div class="projects-grid">
     <div class="pcard">
-      <div class="p-icon">👥</div>
-      <div class="p-name">Employee Management System</div>
-      <p class="p-desc">A full-featured application to manage employee data — records, departments, roles, and attendance — with an intuitive dashboard.</p>
-      <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
-      <button class="view-btn" onclick="openModal('ems')">View Project →</button>
-    </div>
-    <div class="pcard">
       <div class="p-icon">🤖</div>
       <div class="p-name">SDNB-ASKNOVA Assistant</div>
-      <p class="p-desc">An intelligent bilingual chatbot that handles campus queries — course info, timetables, faculty contacts — streamlining communication.</p>
-      <div class="tags"><span class="tag">JavaScript</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+      <p class="p-desc">My custom bilingual campus helpdesk. Handles college queries in English and Tamil with real-time logic.</p>
+      <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
       <button class="view-btn" onclick="openModal('chatbot')">View Project →</button>
     </div>
     <div class="pcard">
       <div class="p-icon">🎓</div>
-      <div class="p-name">PLACIFY — Career Ready</div>
-      <p class="p-desc">A comprehensive placement preparation platform integrating aptitude modules and company-specific technical interview guides.</p>
-      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+      <div class="p-name">PLACIFY Portal</div>
+      <p class="p-desc">A professional training web portal for placement preparation, aptitude modules, and interview guides.</p>
+      <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
       <button class="view-btn" onclick="openModal('placify')">View Project →</button>
     </div>
+    <div class="pcard">
+      <div class="p-icon">👥</div>
+      <div class="p-name">Employee Management</div>
+      <p class="p-desc">A data-driven dashboard for tracking employee records, attendance, and departmental roles.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">Dashboard UI</span></div>
+      <button class="view-btn" onclick="openModal('ems')">View Project →</button>
+    </div>
   </div>
 </section>
-
-<div class="divider" style="margin-left:6vw;margin-right:6vw;"></div>
 
 <section id="skills">
-  <p class="lbl">Tech Stack</p><h2 class="sec-title">Skills & tools.</h2>
+  <p class="lbl">Expertise</p><h2 class="sec-title">Skills & Tools.</h2>
   <div class="skills-grid">
-    <div class="scard"><span class="s-icon">🟨</span><span class="s-name">JavaScript</span></div>
-    <div class="scard"><span class="s-icon">⚛️</span><span class="s-name">React</span></div>
-    <div class="scard"><span class="s-icon">🐘</span><span class="s-name">PHP / XAMPP</span></div>
-    <div class="scard"><span class="s-icon">🗄️</span><span class="s-name">MySQL</span></div>
-    <div class="scard"><span class="s-icon">☁️</span><span class="s-name">AWS Cloud</span></div>
-    <div class="scard"><span class="s-icon">🟢</span><span class="s-name">Node.js</span></div>
-  </div>
-</section>
-
-<div class="divider" style="margin-left:6vw;margin-right:6vw;"></div>
-
-<section id="contact">
-  <p class="lbl">Contact</p><h2 class="sec-title">Let's work together.</h2>
-  <div class="contact-inner">
-    <p class="contact-desc">I'm open to full-time roles, freelance projects, and collaborations. Feel free to reach out — I'd love to chat.</p>
-    <div class="contact-links">
-      <a href="mailto:srinithi@email.com" class="citem">
-        <div class="c-ico">✉️</div>
-        <div><div class="c-lbl">EMAIL</div><div class="c-val">srinithi@email.com</div></div>
-      </a>
-      <a href="https://github.com/srinithi" target="_blank" class="citem">
-        <div class="c-ico">💻</div>
-        <div><div class="c-lbl">GITHUB</div><div class="c-val">github.com/srinithi</div></div>
-      </a>
-      <a href="https://linkedin.com/in/srinithi" target="_blank" class="citem">
-        <div class="c-ico">🔗</div>
-        <div><div class="c-lbl">LINKEDIN</div><div class="c-val">linkedin.com/in/srinithi</div></div>
-      </a>
-    </div>
+    <div class="scard">PHP / MySQL</div>
+    <div class="scard">React.js</div>
+    <div class="scard">Cloud (AWS)</div>
+    <div class="scard">JavaScript</div>
   </div>
 </section>
 
 <footer>
-  <span class="f-logo">Srinithi</span>
-  <span>Crafted with care · 2026</span>
+  <span>Srinithi</span>
+  <span>2026 · Built with Passion</span>
 </footer>
 
 <div class="overlay" id="overlay" onclick="bgClose(event)">
   <div class="modal" id="modal">
     <button class="m-close" onclick="closeModal()">✕</button>
-    <div class="m-icon" id="m-icon"></div>
-    <div class="m-title" id="m-title"></div>
-    <p class="m-desc" id="m-desc"></p>
-    <p class="m-slbl">Features</p>
-    <ul class="m-features" id="m-features"></ul>
-    <p class="m-slbl">Tech Stack</p>
-    <div class="m-tags" id="m-tags"></div>
+    <div class="m-icon" id="m-icon" style="font-size:2rem; margin-bottom:1rem;"></div>
+    <h2 class="m-title" id="m-title" style="margin-bottom:1rem;"></h2>
+    <p class="m-desc" id="m-desc" style="color:var(--muted); margin-bottom:2rem;"></p>
     <div class="m-actions">
-      <a id="m-gh" href="https://github.com/srinithi" target="_blank" class="m-btn-s">⬡ GitHub Repo</a>
-      <button class="m-btn-p" id="m-live-btn" onclick="openDemo()">↗ Live Demo</button>
+      <button class="m-btn-p" onclick="openDemo()">↗ Live Demo</button>
     </div>
   </div>
 </div>
 
 <div class="demo-overlay" id="demo-overlay">
   <div class="demo-bar">
-    <span class="demo-bar-title" id="demo-bar-title">Live Demo</span>
-    <div class="demo-bar-right">
-      <span style="font-size:.8rem;color:#6b82a0;">Interactive preview</span>
-      <button class="demo-close-btn" onclick="closeDemo()">✕ Close Demo</button>
-    </div>
+    <span id="demo-bar-title" style="color:var(--accent); font-weight:bold;"></span>
+    <button onclick="closeDemo()" style="background:var(--accent); border:none; padding:5px 15px; border-radius:5px; cursor:pointer;">Close</button>
   </div>
-  <div class="demo-frame-wrap">
-    <iframe class="demo-frame" id="demo-frame" title="Live Demo"></iframe>
-  </div>
+  <div class="demo-frame-wrap"><iframe class="demo-frame" id="demo-frame"></iframe></div>
 </div>
 
 <script>
-/* --- DYNAMIC PROJECT DATA --- */
 const projectDetails = {
-  ems: {
-    title: "Employee Management System",
-    icon: "👥",
-    desc: "A full-featured application to manage employee records, departments, and attendance with an interactive dashboard.",
-    features: ["CRUD operations for employees", "Real-time statistics dashboard", "Department and status filtering"],
-    tags: ["React", "Node.js", "MongoDB"],
-    gh: "https://github.com/srinithi/ems"
-  },
-  chatbot: {
-    title: "SDNB-ASKNOVA Assistant",
-    icon: "🤖",
-    desc: "An automated bilingual campus helpdesk solution using PHP and MySQL. Features real-time query handling for timetables and course information.",
-    features: ["Bilingual support (English & Tamil)", "Real-time query matching", "Interactive UI"],
-    tags: ["JavaScript", "PHP", "MySQL", "Mock Demo Supported"],
-    gh: "https://github.com/srinithi/sdnb-asknova"
-  },
-  placify: {
-    title: "PLACIFY — Career Ready",
-    icon: "🎓",
-    desc: "A comprehensive placement preparation platform. Integrated aptitude modules, coding logic challenges, and company-specific interview guides.",
-    features: ["Company-specific study guides (e.g., Zoho)", "Aptitude training datasets", "Logic practice modules"],
-    tags: ["HTML", "CSS", "JavaScript", "Educational Tool"],
-    gh: "https://github.com/srinithi/placify"
-  }
+  chatbot: { title: "SDNB-ASKNOVA Assistant", icon: "🤖", desc: "My primary custom-built chatbot. It serves the SDNB Vaishnav College community with bilingual support." },
+  placify: { title: "PLACIFY Placement Portal", icon: "🎓", desc: "A full web page application designed to streamline campus placement preparation." },
+  ems: { title: "Employee Management System", icon: "👥", desc: "A professional dashboard mock-up for managing organizational data." }
 };
 
-/* --- DEMO STRINGS --- */
 const demos = {
-  ems: `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f0f4f8;color:#1a202c;min-height:100vh; display:flex; align-items:center; justify-content:center;}
-.demo-box {background: white; padding: 40px; border-radius: 12px; text-align:center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
-h1 {color: #1a365d; margin-bottom: 10px;}
-p {color: #4a5568;}
-</style>
-</head>
-<body>
-<div class="demo-box">
-  <h1>👥 Employee Management System</h1>
-  <p>This is a placeholder for your detailed React EMS application.</p>
-</div>
-</body>
-</html>`,
+  chatbot: `<html><body style="font-family:sans-serif; background:#f0f2f5; display:flex; flex-direction:column; height:95vh; margin:0;">
+    <div style="background:#00d4a1; color:white; padding:15px; text-align:center;">SDNB-ASKNOVA</div>
+    <div id="c" style="flex:1; padding:20px; overflow-y:auto;">
+      <div style="background:white; padding:10px; border-radius:10px; margin-bottom:10px; width:fit-content;">Welcome! How can I help you today?</div>
+    </div>
+    <div style="padding:15px; background:white; display:flex;"><input id="i" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:5px;" placeholder="Ask something..." onkeypress="if(event.key=='Enter')send()"></div>
+    <script>function send(){ const i=document.getElementById('i'); const c=document.getElementById('c'); if(!i.value)return; c.innerHTML+='<div style="background:#00d4a1; color:white; padding:10px; border-radius:10px; margin-bottom:10px; align-self:flex-end; margin-left:auto; width:fit-content;">'+i.value+'</div>'; setTimeout(()=>{ c.innerHTML+='<div style="background:white; border:1px solid #ddd; padding:10px; border-radius:10px; margin-bottom:10px; width:fit-content;">Processing query via SDNB Database...</div>'; c.scrollTop=c.scrollHeight; },500); i.value=''; }<\/script>
+  </body></html>`,
+  
+  placify: `<html><body style="font-family:sans-serif; margin:0; background:#f8fafc;">
+    <nav style="background:#1e293b; color:white; padding:20px; display:flex; justify-content:space-between;"><strong>PLACIFY PORTAL</strong> <span>Dashboard</span></nav>
+    <div style="padding:40px; text-align:center; background:#3b82f6; color:white;"><h1>Your Career Starts Here</h1><p>Training guides for Zoho, TCS, and more.</p></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:20px;">
+      <div style="background:white; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><h3>Aptitude Practice</h3><button style="background:#3b82f6; color:white; border:none; padding:10px; border-radius:5px;">Start Quiz</button></div>
+      <div style="background:white; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1);"><h3>Technical Prep</h3><button style="background:#3b82f6; color:white; border:none; padding:10px; border-radius:5px;">View Guides</button></div>
+    </div>
+  </body></html>`,
 
-  chatbot: `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-  body { background: #fdfdfd; display: flex; flex-direction: column; height: 100vh; }
-  .header { background: #00d4a1; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-  .header h2 { font-size: 1.1rem; }
-  .lang-toggle { background: rgba(255,255,255,0.2); border: 1px solid white; color: white; padding: 5px 10px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; }
-  .chat-box { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; background: #f9fbfd; }
-  .msg { max-width: 80%; padding: 12px 16px; border-radius: 15px; font-size: 0.9rem; line-height: 1.4; }
-  .bot { background: white; border: 1px solid #e0e6ed; align-self: flex-start; border-bottom-left-radius: 2px; color: #334155; }
-  .user { background: #00d4a1; color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
-  .input-area { padding: 15px; background: white; border-top: 1px solid #eee; display: flex; gap: 10px; }
-  input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 25px; outline: none; font-size: 0.9rem; }
-  button#send { background: #00d4a1; color: white; border: none; padding: 0 20px; border-radius: 25px; cursor: pointer; font-weight: 600; }
-  .mock-tag { font-size: 0.7rem; color: #94a3b8; text-align: center; padding: 5px; background: #f1f5f9; }
-</style>
-</head>
-<body>
-  <div class="mock-tag">OFFLINE DEMO MODE (JavaScript Simulated)</div>
-  <div class="header">
-    <h2>SDNB ASKNOVA</h2>
-    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">தமிழ்</button>
-  </div>
-  <div class="chat-box" id="chatBox">
-    <div class="msg bot" id="welcomeMsg">Welcome to SDNB Vaishnav College helpdesk! How can I help you today?</div>
-  </div>
-  <div class="input-area">
-    <input type="text" id="userInput" placeholder="Ask about courses, placement, office...">
-    <button id="send" onclick="sendMessage()">Send</button>
-  </div>
-<script>
-  let currentLang = 'en';
-  const data = {
-    en: {
-      welcome: "Welcome to SDNB Vaishnav College helpdesk! How can I help you today?",
-      placeholder: "Ask about courses, placement, office...",
-      responses: {
-        "course": "We offer BCA, B.Sc Computer Science, IT, and many other streams. Which one are you interested in?",
-        "placement": "Our PLACIFY module shows active recruitment from Zoho, TCS, and CTS this month!",
-        "office": "The administrative office is open from 9:00 AM to 4:00 PM.",
-        "default": "I'm sorry, I don't have information on that. Try asking about 'courses' or 'placement'."
-      }
-    },
-    ta: {
-      welcome: "SDNB வைஷ்ணவ் கல்லூரி உதவி மையத்திற்கு வரவேற்கிறோம்! நான் உங்களுக்கு எப்படி உதவ முடியும்?",
-      placeholder: "படிப்பு, வேலைவாய்ப்பு பற்றி கேளுங்கள்...",
-      responses: {
-        "course": "நாங்கள் BCA, B.Sc கணினி அறிவியல் மற்றும் IT துறைகளை வழங்குகிறோம்.",
-        "placement": "இந்த மாதம் Zoho மற்றும் TCS நிறுவனங்கள் வேலைவாய்ப்பு வழங்குகின்றன.",
-        "office": "நிர்வாக அலுவலகம் காலை 9:00 மணி முதல் மாலை 4:00 மணி வரை செயல்படும்.",
-        "default": "மன்னிக்கவும், அது பற்றிய தகவல் என்னிடம் இல்லை."
-      }
-    }
-  };
-  function toggleLang() {
-    currentLang = currentLang === 'en' ? 'ta' : 'en';
-    document.getElementById('langBtn').innerText = currentLang === 'en' ? 'தமிழ்' : 'English';
-    document.getElementById('userInput').placeholder = data[currentLang].placeholder;
-    addMessage(data[currentLang].welcome, 'bot');
-  }
-  function addMessage(text, side) {
-    const chatBox = document.getElementById('chatBox');
-    const div = document.createElement('div');
-    div.className = 'msg ' + side;
-    div.innerText = text;
-    chatBox.appendChild(div);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }
-  function sendMessage() {
-    const input = document.getElementById('userInput');
-    const text = input.value.trim().toLowerCase();
-    if(!text) return;
-    addMessage(input.value, 'user');
-    input.value = '';
-    setTimeout(() => {
-      let response = data[currentLang].responses.default;
-      for (let key in data[currentLang].responses) {
-        if (text.includes(key)) {
-          response = data[currentLang].responses[key];
-          break;
-        }
-      }
-      addMessage(response, 'bot');
-    }, 600);
-  }
-  document.getElementById('userInput').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') sendMessage();
-  });
-<\/script>
-</body>
-</html>`,
-
-  placify: `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',sans-serif;background:#f0f4f8;color:#1a202c;min-height:100vh; display:flex; align-items:center; justify-content:center;}
-.demo-box {background: white; padding: 40px; border-radius: 12px; text-align:center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
-h1 {color: #1a365d; margin-bottom: 10px;}
-p {color: #4a5568;}
-</style>
-</head>
-<body>
-<div class="demo-box">
-  <h1>🎓 PLACIFY Platform</h1>
-  <p>This is a placeholder for your placement prep demo.</p>
-</div>
-</body>
-</html>`
+  ems: `<html><body style="font-family:sans-serif; margin:0; display:flex;">
+    <div style="width:200px; background:#2d3748; color:white; height:100vh; padding:20px;">EMS Admin<br><br>Employees<br>Reports</div>
+    <div style="flex:1; padding:20px; background:#f7fafc;"><h2>Active Staff</h2><table style="width:100%; border-collapse:collapse; background:white;">
+    <tr style="background:#edf2f7;"><th style="padding:10px; text-align:left;">Name</th><th style="padding:10px; text-align:left;">Role</th></tr>
+    <tr><td style="padding:10px; border-bottom:1px solid #eee;">Srinithi</td><td style="padding:10px; border-bottom:1px solid #eee;">Lead Dev</td></tr>
+    </table></div>
+  </body></html>`
 };
 
-/* --- LOGIC FUNCTIONS --- */
-let currentActiveProject = '';
-
+let currentKey = '';
 function openModal(key) {
-  currentActiveProject = key;
-  const project = projectDetails[key];
-  
-  document.getElementById('m-title').innerText = project.title;
-  document.getElementById('m-icon').innerText = project.icon;
-  document.getElementById('m-desc').innerText = project.desc;
-  
-  // Build features list
-  document.getElementById('m-features').innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
-  
-  // Build tags
-  document.getElementById('m-tags').innerHTML = project.tags.map(t => `<span class="tag">${t}</span>`).join('');
-  
-  // Set GitHub link
-  document.getElementById('m-gh').href = project.gh;
-  
-  // Open modal
+  currentKey = key;
+  document.getElementById('m-title').innerText = projectDetails[key].title;
+  document.getElementById('m-icon').innerText = projectDetails[key].icon;
+  document.getElementById('m-desc').innerText = projectDetails[key].desc;
   document.getElementById('overlay').classList.add('open');
 }
-
-function closeModal() {
-  document.getElementById('overlay').classList.remove('open');
-}
-
-function bgClose(event) {
-  if (event.target.id === 'overlay') {
-    closeModal();
-  }
-}
-
+function closeModal() { document.getElementById('overlay').classList.remove('open'); }
+function bgClose(e) { if(e.target.id === 'overlay') closeModal(); }
 function openDemo() {
-  const overlay = document.getElementById('demo-overlay');
-  const frame = document.getElementById('demo-frame');
-  const htmlContent = demos[currentActiveProject];
-  
-  // Write the string directly into the iframe document
-  const doc = frame.contentWindow.document;
-  doc.open();
-  doc.write(htmlContent);
-  doc.close();
-  
-  document.getElementById('demo-bar-title').innerText = "Live Demo: " + projectDetails[currentActiveProject].title;
-  overlay.classList.add('open');
+  const f = document.getElementById('demo-frame');
+  f.contentWindow.document.open();
+  f.contentWindow.document.write(demos[currentKey]);
+  f.contentWindow.document.close();
+  document.getElementById('demo-bar-title').innerText = projectDetails[currentKey].title;
+  document.getElementById('demo-overlay').classList.add('open');
 }
-
-function closeDemo() {
-  document.getElementById('demo-overlay').classList.remove('open');
-  document.getElementById('demo-frame').src = 'about:blank'; // Clear it out
-}
+function closeDemo() { document.getElementById('demo-overlay').classList.remove('open'); }
 </script>
 </body>
 </html>
